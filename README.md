@@ -21,35 +21,35 @@ This project is a clone of the Apollo 247 doctor listing page using Next.js, Mon
 
 Create a `.env.local` file in the root directory with the following variables:
 
-\`\`\`
+```
 MONGODB_URI=your_mongodb_connection_string
 MONGODB_DB=apollo
-\`\`\`
+```
 
 ### Installation
 
 1. Clone the repository
 2. Install dependencies:
 
-\`\`\`bash
+```bash
 npm install
-\`\`\`
+```
 or
-\`\`\`bash
+```bash
  npm install --legacy-peer-deps
-\`\`\`
+```
 
 3. Seed the database:
 
-\`\`\`bash
+```bash
 npm run seed
-\`\`\`
+```
 
 4. Run the development server:
 
-\`\`\`bash
+```bash
 npm run dev
-\`\`\`
+```
 
 5. Open [http://localhost:3000](http://localhost:3000) in your browser
 
@@ -77,13 +77,13 @@ This API retrieves a list of doctors with filtering, sorting, and pagination.
 
 **Example Request:**
 
-\`\`\`
+```
 GET /api/doctors?page=1&limit=10&gender=female&minExperience=5&maxExperience=20&minFee=500&maxFee=1000&language=english&sortBy=experience_high_to_low
-\`\`\`
+```
 
 **Example Response:**
 
-\`\`\`json
+```json
 {
   "doctors": [
     {
@@ -110,7 +110,7 @@ GET /api/doctors?page=1&limit=10&gender=female&minExperience=5&maxExperience=20&
   "totalPages": 3,
   "totalDoctors": 25
 }
-\`\`\`
+```
 
 ### 2. Add Doctor API
 
@@ -122,7 +122,7 @@ This API adds a new doctor to the database.
 
 **Request Body:**
 
-\`\`\`json
+```json
 {
   "name": "John Smith",
   "specialization": "General Physician & Internal Medicine",
@@ -140,11 +140,11 @@ This API adds a new doctor to the database.
   "cashback": 80,
   "availableToday": true
 }
-\`\`\`
+```
 
 **Example Response:**
 
-\`\`\`json
+```json
 {
   "success": true,
   "doctor": {
@@ -167,7 +167,7 @@ This API adds a new doctor to the database.
     "createdAt": "2023-06-23T10:15:30.123Z"
   }
 }
-\`\`\`
+```
 
 ## How to Add a Single Doctor
 
@@ -177,7 +177,7 @@ To add a single doctor to the database, you can use the Add Doctor API. Here's h
 
 Example using curl:
 
-\`\`\`bash
+```bash
 curl -X POST http://localhost:3000/api/doctors/add \
   -H "Content-Type: application/json" \
   -d '{
@@ -197,11 +197,11 @@ curl -X POST http://localhost:3000/api/doctors/add \
     "cashback": 80,
     "availableToday": true
   }'
-\`\`\`
+```
 
 Example using JavaScript fetch:
 
-\`\`\`javascript
+```javascript
 fetch('/api/doctors/add', {
   method: 'POST',
   headers: {
@@ -227,7 +227,7 @@ fetch('/api/doctors/add', {
 })
 .then(response => response.json())
 .then(data => console.log(data));
-\`\`\`
+```
 
 ## Deployment
 
@@ -241,5 +241,5 @@ This project can be deployed to Vercel with the following steps:
 ## License
 
 This project is for educational purposes only.
-\`\`\`
+
 
